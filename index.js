@@ -22,17 +22,29 @@ console.log(
 const run = async () => {
     const details = await inquirer.askStandUpDetails();
 
+    const createStandUpStatus = new Spinner('Creating stand up...');
+    createStandUpStatus.start();
+
     const boardIssues = await jira.getBoardIssues();
 
-    const filtered = standup.filterIssues(details, boardIssues.issues);
+    const filtered = standup.create(details, boardIssues.issues);
     const grouped = standup.groupByProjectName(filtered);
     const lines = standup.createLinesByArray(details, grouped);
+    
+    createStandUpStatus.stop();
 
     if(process.env.CREATE_FILE) {
+        const createFileStatus = new Spinner('Creating file...');
+        createFileStatus.start();
+
         files.createMarkdownFile(lines);
+
+        createFileStatus.stop();
     } else {
         console.log(lines);
     }
+
+    
 };
 
 run();
