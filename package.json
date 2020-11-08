@@ -9,9 +9,14 @@
     "author": "",
     "license": "MIT",
     "dependencies": {
+        "chalk": "^4.1.0",
+        "clear": "^0.1.0",
+        "clui": "^0.3.6",
         "convert-seconds": "^1.0.1",
         "date-fns": "^2.16.1",
         "dotenv": "^8.2.0",
+        "figlet": "^1.5.0",
+        "inquirer": "^7.3.3",
         "jira-client": "^6.21.1"
     }
 }
