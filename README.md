@@ -7,7 +7,6 @@ Current set up is, run the code, which will create a markdown file for the day, 
 with the team communication channel.
 
 ### Upcoming ideas
-- Going to implement questions, to ask if there is a certain project/ client requires focus on for the day.
 - Check if there are any pull requests which are required attention on the Jira cards.
 - Pull through cards which are in testing, that will require testing the following day.
 - Connect to to team communication channel to automate the process that little bit more.
